@@ -1,0 +1,38 @@
+{
+  "name": "nodeblog",
+  "version": "1.0.0",
+  "description": "A blog system that could add posts & categories as well as view, publish, comment posts.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jg3526/NodeBlog.git"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "serve-favicon": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-validator": "*",
+    "express-session": "*",
+    "express-messages": "*",
+    "jade": "*",
+    "morgan": "*",
+    "multer": "*",
+    "mongodb": "*",
+    "monk": "*",
+    "connect-flash": "*",
+    "moment": "*"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Jie Gao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jg3526/NodeBlog/issues"
+  },
+  "homepage": "https://github.com/jg3526/NodeBlog#readme"
+}

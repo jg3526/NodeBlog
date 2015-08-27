@@ -1,0 +1,84 @@
+body{
+	//padding-top: 70px;
+	font-family: arial;
+	font-size: 15px;
+	background: #f4f4f4;
+	color:#666;
+}
+.logo{
+	text-align: center;
+	margin: 30px auto;
+	display: block;
+}
+.container{
+	width: 750;
+	border: 1px solid #ccc;
+	margin: 20px auto;
+	padding: 20px;
+	border-top: #A52A2A 3px solid;
+}
+.clr{
+	clear: both;
+}
+ul{
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, p{
+	padding: 5px 0;
+	margin-bottom: 0;
+}
+p{
+	margin: 0;
+}
+a{
+	color: #404137;
+	text-decoration: none;
+}
+nav{
+	background: #A52A2A;
+	color: #EDC9AF;
+	overflow: auto;
+	height: 40px;
+	padding: 0;
+	font-size: 18px;
+}
+
+nav li{
+	float: left;
+	list-style: none;
+	padding: 10px;
+}
+nav a{
+	padding: 10px;
+	margin: 0 10px;
+	color: #EDC9AF;
+}
+nav a.current, nav a:hover{
+	background: #cd5c5c;
+	color: #EDC9AF;
+}
+
+ul.success li, ul.info li, ul.error li {
+	margin: 20px 0 20px 0;
+	padding: 15px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	list-style: none;
+}
+ul.success li {
+	color: #3c763d;
+	background: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+ul.info li {
+	color: #31708f;
+	background: #d9edf7;
+	border-color: #bce8f1;
+}
+ul.error li {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
