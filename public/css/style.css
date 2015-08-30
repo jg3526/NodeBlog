@@ -58,13 +58,35 @@ nav a.current, nav a:hover{
 	background: #cd5c5c;
 	color: #EDC9AF;
 }
+.meta {
+	padding:7px;
+	border:1px solid #E0C2C2;
+	background: #E0C2C2;
+	color: #996666;
+}
 
+.post{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+	color: #996666;
+}
+.post a{
+	color: #663333;
+}
 ul.success li, ul.info li, ul.error li {
 	margin: 20px 0 20px 0;
 	padding: 15px;
 	border: 1px solid transparent;
 	border-radius: 5px;
 	list-style: none;
+}
+a.more{
+	display: block;
+	width: 80px;
+	background: #663333;
+	color: #EDC9AF;
+	padding: 10px;
+	margin-top: 30px;
 }
 ul.success li {
 	color: #3c763d;

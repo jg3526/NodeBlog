@@ -17,6 +17,7 @@ var routes = require('./routes/index');
 
 var app = express();
 console.log('Express initialized!');
+app.locals.moment = require('moment');
 
 // view engine setup
 app.set('views', __dirname + '/views');
