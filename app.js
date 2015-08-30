@@ -8,12 +8,12 @@ var session = require('express-session');
 var expressValidator = require('express-validator');
 var mongo = require('mongodb');
 var db = require('monk')('localhost/nodeblog');
-var multer = require('multer');
 var flash = require('connect-flash');
 
 var port = 3000;
 
 var routes = require('./routes/index');
+var posts = require('./routes/posts');
 
 var app = express();
 console.log('Express initialized!');
@@ -26,7 +26,6 @@ console.log('Jade initilaized!');
 
 // multer destination setup
 // app.use(multer({ dest:'./public/images/uploads' })); -> wrong
-// var upload = multer({dest: './uploads/'}); -> right
 
 // uncomment after placing favicon in /public
 // app.user(favicon(__name + '/public/favicon.ico'));
@@ -79,6 +78,7 @@ app.get('*', function(req, res, next) {
 });
 
 app.use('/', routes);
+app.use('/posts', posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -90,13 +90,13 @@ app.use(function(req, res, next) {
 // error handlers
 
 // development error handler, will print stacktrace
-if (app.get('env') === 'development') {
-	app.use(function(err, req, res, next) {
-		res.status(err.status || 500);
-		req.flash('error', err);
-		res.render('error');
-	});
-}
+// if (app.get('env') === 'development') {
+// 	app.use(function(err, req, res, next) {
+// 		res.status(err.status || 500);
+// 		req.flash('error', err);
+// 		res.render('error');
+// 	});
+// }
 
 app.listen(port);
 console.log('Connected to port ' + port + '...');
