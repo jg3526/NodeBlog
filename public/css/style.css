@@ -16,6 +16,7 @@ body{
 	margin: 20px auto;
 	padding: 20px;
 	border-top: #A52A2A 3px solid;
+	border-bottom: #A52A2A 3px solid;
 }
 .clr{
 	clear: both;
@@ -43,6 +44,7 @@ nav{
 	height: 40px;
 	padding: 0;
 	font-size: 18px;
+	margin-bottom: 20px;
 }
 
 nav li{
@@ -64,6 +66,7 @@ nav a.current, nav a:hover{
 	border:1px solid #E0C2C2;
 	background: #E0C2C2;
 	color: #996666;
+	margin-bottom: 15px;
 }
 
 .post{
@@ -74,6 +77,14 @@ nav a.current, nav a:hover{
 .post a{
 	color: #663333;
 }
+img.displayed{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	height: auto;
+}
+
 ul.success li, ul.info li, ul.error li {
 	margin: 20px 0 20px 0;
 	padding: 15px;
@@ -108,6 +119,11 @@ select{
 textarea{
 	height: 200px;
 	width: 300px;
+}
+footer{
+	margin-top: 20px;
+	text-align: center;
+	height: 30px;
 }
 ul.success li {
 	color: #3c763d;

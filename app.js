@@ -14,10 +14,17 @@ var port = 3000;
 
 var routes = require('./routes/index');
 var posts = require('./routes/posts');
+var categories = require('./routes/categories');
 
 var app = express();
 console.log('Express initialized!');
 app.locals.moment = require('moment');
+app.locals.truncateText = function(text, length) {
+	if (length < text.length)
+		return truncatedText = text.substring(0, length) + ' ... ';
+	else
+		return text;
+}
 
 // view engine setup
 app.set('views', __dirname + '/views');
@@ -79,6 +86,7 @@ app.get('*', function(req, res, next) {
 
 app.use('/', routes);
 app.use('/posts', posts);
+app.use('/categories', categories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
