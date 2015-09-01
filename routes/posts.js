@@ -3,6 +3,16 @@ var router = express.Router();
 var multer = require('multer');
 var upload = multer({dest: 'public/images/uploads/'}); //-> right
 
+router.get('/show/:id', function(req, res, next) {
+	var posts = req.db.get('posts');
+	var id = req.params.id;
+	posts.findById(id, function(err, post) {
+		res.render('show', {
+			title: post.title,
+			post: post
+		});
+	});
+});
 router.get('/add', function(req, res, next) {
 	var categories = req.db.get('categories');
 	categories.find({},{}, function(err, categories) {

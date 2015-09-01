@@ -1,0 +1,14 @@
+extend layout
+block content
+	if post
+		.post
+			h1
+				a(href='/posts/show/#{post._id}')
+					= post.title
+			p.meta Posted in #[a(href='/categories/show/#{post.category}') #{post.category}] by #{post.author} on #{moment(post.date).format('HH:mm:SS, MMM Do, YYYY, dddd')}
+			if post.image
+				img.displayed(src='/images/uploads/#{post.image}')
+			p
+				!=post.body
+	else
+		p.noposts There are no post to display.
