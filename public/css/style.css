@@ -68,7 +68,12 @@ nav a.current, nav a:hover{
 	color: #996666;
 	margin-bottom: 15px;
 }
+p.comment-name {
+	background: #E0C2C2;
+	color: #996666;
+	padding:7px;
 
+}
 .post{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 20px;
@@ -107,7 +112,7 @@ label{
 input, select, textarea{
 	margin-bottom: 15px;
 }
-input[type='text'],select,textarea{
+input[type='text'], input[type='email'], select,textarea{
 	padding: 3px;
 	height: 20px;
 	width: 200px;
@@ -125,6 +130,7 @@ footer{
 	text-align: center;
 	height: 30px;
 }
+
 ul.success li {
 	color: #3c763d;
 	background: #dff0d8;

@@ -12,6 +12,54 @@ router.get('/show/:id', function(req, res, next) {
 			post: post
 		});
 	});
+})
+router.post('/addcomment', function(req, res, next) {
+	// get form values
+	console.log(req.body);
+	var name = req.body.name;
+	var email = req.body.email;
+	var body = req.body.body;
+	var postid = req.body.postid;	// coming from the hidden field
+	var date = new Date();
+
+	// validation for fields
+	req.checkBody('name', 'Name field is required.').notEmpty();
+	req.checkBody('email', 'Email field is required.').notEmpty();
+	req.checkBody('email', 'Email is not int right format.').isEmail();
+	req.checkBody('body', 'Comment body is required.').notEmpty();
+
+	var errors = req.validationErrors();
+	if (errors) {
+		var posts = req.db.get('posts');
+		posts.findById(postid, function(err, post) {
+			res.render('show', {
+				title: post.title,
+				post: post,
+				errors: errors
+			});
+		});
+	} else {
+		var comment = {
+			"name": name,
+			"email": email,
+			"body": body,
+			"date": date
+		};
+		var posts = req.db.get('posts');
+		posts.update({_id: postid}, {
+			$push: {
+				"comments": comment
+			}
+		}, function (err, doc){
+			if (err) {
+				res.send('There was an issue submitting the comment.');
+			} else {
+				req.flash('success', 'Comment Added.');
+				res.location('/posts/show/' + postid);
+				res.redirect('/posts/show/' + postid);
+			}
+		});
+	}
 });
 router.get('/add', function(req, res, next) {
 	var categories = req.db.get('categories');
